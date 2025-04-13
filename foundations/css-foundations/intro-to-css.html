@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro to CSS</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .internal-css {
+            color: brown;
+        }
+    </style>
+</head>
+<body>
+    <h1>Intro to CSS</h1>
+    <p>Section to introduction for CSS styles</p>
+    <div>Element 1</div>
+    <div>Element 2</div>
+
+    <div class="alert-text">This is styled using a class attribute.</div>
+    <div id="title">Selected using ID</div>
+
+    <div class="read">Read</div>
+    <div class="unread">Unread</div>
+
+    <div>
+        <div class="subsection header">Latest Posts</div>
+        <p class="subsection" id="preview">This is where a preview for a post might go.</p>
+    </div>      
+
+    <div class="ancestor">
+        <!-- A -->
+        A
+        <div class="contents">
+            <!-- B -->
+            B
+            <div class="contents"><!-- C -->C</div>
+        </div>
+    </div>
+    <div class="contents"><!-- D --></div>
+
+    <div class="internal-css">Internal CSS</div>
+</body>
+</html>

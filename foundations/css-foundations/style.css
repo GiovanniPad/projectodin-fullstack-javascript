@@ -1,0 +1,58 @@
+* {
+    color: purple;
+}
+
+div {
+    color: blue;
+}
+
+.alert-text {
+    color: red;
+}
+
+#title {
+    background-color: red;
+}
+
+.read, .unread {
+    color: white;
+    background-color: black;
+}
+
+.read {
+    color: blueviolet;
+}
+
+.unread {
+    color: aqua;
+}
+
+.subsection.header {
+    color: red;
+}
+
+.subsection#preview {
+    color: blue;
+}
+
+.ancestor .contents {
+    color: azure;
+    background-color: yellowgreen;
+}
+
+p {
+    color: #1100ff;
+}
+
+p {
+    color: rgb(100, 0, 127)
+}
+
+p{
+    color: hsl(15, 82%, 56%)
+}
+
+img {
+    height: auto;
+    width: 500px;
+}
