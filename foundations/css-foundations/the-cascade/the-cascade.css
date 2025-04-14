@@ -1,0 +1,135 @@
+/* Neste exemplo, ambas as regras estão usando apenas
+seletores por classe, mas a regra 2 é mais específica, pois
+está usando mais seletores por classe, então a declaração
+`color: red` vai ter precedência.
+*/
+/* Regra 1 */
+/* .subsection {
+    color: blue;
+} */
+
+/* Regra 2 */
+/* .main .list {
+    color: red;
+} */
+
+
+/* Neste exemplo, apesar da regra 2 ter mais seletores por classes
+do que seletores por ID, a regra 1 é mais específica pois IDs ganham
+de classes. Neste caso, a declaração `color: blue` vai ter precedência.
+*/
+/* Regra 1 */
+/* #subsection {
+    color: blue;
+} */
+
+/* Regra 2 */
+/* .main .list {
+    color: red;
+} */
+
+
+/* Neste exemplo, a primeira regra use um seletor por ID, enquanto
+a segunda regra combina um seletor de ID com um seletor de classe.
+Portanto, nenhuma regra está usando um seletor mais específico que
+o outro. Neste caso, a cascata verifica o número de seletores de cada tipo.
+Ambas as regras possuem apenas um seletor de ID, mas a regra 2 possui
+um seletor de classe a mais do que o seletor de ID, logo a regra 2 tem uma
+maior especificidade.
+
+Enquanto a declaração `color: red` vai ter precedência sobre, a declaração
+`background-color: yellow` ainda vai ser aplicado, já que não tem nenhuma
+declaração conflitando com ela.
+*/
+/* Regra 1 */
+/* #subsection {
+    background-color: yellow;
+    color: blue;
+} */
+
+/* Regra 2 */
+/* .main #subsection {
+    color: red;
+} */
+
+
+/* Ambas as regras possuem a mesma especificidade. A regra 1 utiliza
+um seletor encadeado (sem espaço) e a regra 2 usa uma combinação de
+descendência (o espaço em branco). Ambas as regras possuem duas classes
+e o símbolo combinador não adiciona nada a especificidade.
+*/
+/* Regra 1 */
+/* .class.second-class {
+    font-size: 12px;
+} */
+
+/* Regra 2 */
+/* .class .second-class {
+    font-size: 24px;
+} */
+
+
+/* Este exemplo mostra a mesma coisa do anterior. Mesmo que a regra 2
+está utilizando um combinador por filho (`>`), isso não afeta o valor de
+especificidade. Ambas as regras ainda vão ter duas classes, logo tem o
+mesmo valor de especificidade.
+*/
+/* Regra 1 */
+/* .class.second-class {
+    font-size: 12px;
+} */
+
+/* Regra 2 */
+/* .class > .second-class {
+    font-size: 24px;
+} */
+
+
+/* Neste exemplo, a regra 2 vai ter uma maior especificidade e o
+valor `orange` vai ter precedência para o elemento `h1`. A regra
+2 utiliza o seletor por elemento, que possui o menor valor de
+especificidade. Mas a regra 1 usa o seletor universal que não possui
+nenhum valor de especificidade.
+*/
+/* Regra 1 */
+/* * {
+    color: black;
+} */
+
+/* Regra 2 */
+/* h1 {
+    color: orange;
+} */
+
+
+/* Herança */
+
+
+/* Mesmo que o elemento pai `parent` possui uma maior especificidade
+com o ID, o elemento filho `child` vai ter o estilo `color: blue` aplicado,
+já que a declaração o visa diretamente, enquanto `color: red` do elemento pai
+é apenas herdado.
+*/
+/* #parent {
+    color: red;
+}
+
+.child {
+    color: blue;
+} */
+
+
+/* Para um elemento que possui ambas as classes `alert` e `warning`,
+a cascata vai passar em todos os fatores, incluindo a herança (nenhuma aqui)
+e a especificidade (nenhuma regra é mais específica do que a outra). Uma vez
+que a regra `.warning` vai a última a ser definida e nenhum outro fator foi
+capaz de determinar qual regra aplicar, ela vai ser a regra aplicada ao
+elemento.
+*/
+.alert {
+    color: red;
+}
+
+.warning {
+    color: yellow;
+}
